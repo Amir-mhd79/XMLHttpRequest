@@ -2,7 +2,7 @@ let button=document.querySelector("button.get")
 let fetchComments=()=>{
     let html=""
     let xml= new XMLHttpRequest()
-    xml.open("get","https://jsonplaceholder.typicode.com/comments")
+    xml.open("get","https://jsonplaceholder.typicode.com/commnts")
     xml.responseType="json"
     xml.onload=()=>{
         xml.response.forEach((elem)=>{
@@ -15,6 +15,10 @@ let fetchComments=()=>{
                    </div>`;
         })
         document.querySelector("div.wrapper").innerHTML=html
+    }
+    xml.onerror=()=>{
+        document.querySelector("div.wrapper").innerText=`Error from Server`
+        console.log("error");
     }
     xml.send(null)
 }
