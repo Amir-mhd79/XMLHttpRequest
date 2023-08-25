@@ -2,7 +2,7 @@ let button=document.querySelector("button.get")
 let fetchComments=()=>{
     let html=""
     let xml= new XMLHttpRequest()
-    xml.open("get","https://jsonplaceholder.typicode.com/commnts")
+    xml.open("get","https://jsonplaceholder.typicode.com/comments")
     xml.responseType="json"
     xml.onload=()=>{
         xml.response.forEach((elem)=>{
